@@ -39,6 +39,8 @@ function useHttp(requestFunction, startWithPending = false) {
     async function (requestData) {
       dispatch({ type: 'SEND' });
       try {
+        console.log("requestData");
+        console.log(requestData);
         const responseData = await requestFunction(requestData);
         dispatch({ type: 'SUCCESS', responseData });
       } catch (error) {
